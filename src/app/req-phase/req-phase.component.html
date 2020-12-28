@@ -1,0 +1,76 @@
+
+<form [formGroup]="reqForm" (ngSubmit)="editMode? onEditSubmit(): onCreateSubmit()" class="px-3 py-3">
+
+<!---------------------------------------------------  intro  -->
+         
+    <div class="form-group">
+        <label for="intro">introduction</label>
+        <input type="text" 
+        class="form-control item my-3" 
+        id="intro" 
+        formControlName="intro">
+    </div>
+<!---------------------------------------------------  purpose  -->
+         
+<div class="form-group">
+    <label for="intro">purpose of software</label>
+    <input type="text" 
+    class="form-control item my-3" 
+    id="purpose" 
+    formControlName="purpose">
+</div>
+<!---------------------------------------------------  inAudience  -->
+         
+<div class="form-group">
+    <label for="intro">intended audience</label>
+    <input type="text" 
+    class="form-control item my-3" 
+    id="inAudience" 
+    formControlName="inAudience">
+</div>
+<!---------------------------------------------------  overallDesc  -->
+         
+<div class="form-group">
+    <label for="intro">overall description</label>
+    <input type="text" 
+    class="form-control item my-3" 
+    id="overallDesc" 
+    formControlName="overallDesc">
+</div>
+<!---------------------------------------------------  sysFeature  -->
+         
+<div class="form-group">
+    <label for="intro">system features</label>
+    <ol>
+        <li>Functional requirments</li>
+        <li>Non-functional requirments</li>
+        <li>External interface requirments</li>
+    </ol>
+    <textarea 
+    class="form-control item my-3" 
+    id="sysFeature" 
+    formControlName="sysFeature"></textarea>
+</div>
+<!---------------------------------------------------  usecaseImage  -->
+         
+<div class="form-group">
+    <label for="intro">usecase Image</label>
+    <input type="file" 
+    class="form-control  my-3" 
+    id="usecaseImage" 
+    (change)="inputChange($event)"
+    formControlName="usecaseImage"
+    accept="image/*">
+</div>
+ <!--------------------------------------------------- Buttons -->
+ <div class="form-group">
+    <button 
+    type="submit" 
+    class="btn btn-success login-account mx-2"
+    >Save</button>
+    <button 
+    type="reset" 
+    class="btn btn-danger login-account mx-2"
+    >reset</button>
+</div> 
+</form>  

@@ -1,0 +1,38 @@
+
+<div class=" my-3" *ngIf="!isPhaseSaved() ">
+    <div class="row sdlcComp rounded pb-2">
+        <div class="col-4">
+            <h3>sdlc phase</h3>
+        </div>
+        <div class="col-8 " >
+           <form [formGroup]="phasesForm" class="">
+               <select
+                name="phaseSelection" 
+                id="phaseSelection" 
+                class="form-control"
+               formControlName="phaseSelection">
+                <option disabled selected value=""> select an option </option>
+                   <option value="1" >initiation phase</option>
+                   <option value="2">Requirment phase (Analysis)</option>
+                   <option value="3">Design phase</option>
+               </select>
+           </form>
+        </div>
+    </div>
+    <hr >
+    <button class="btn btn-danger float-right"
+    *ngIf=" phasesForm.get('phaseSelection').value =='1' || phasesForm.get('phaseSelection').value =='2' || phasesForm.get('phaseSelection').value =='3' "
+    (click)="onClosePhase()">Close</button>
+    
+    <div class="row">
+        <app-init-phase
+        *ngIf=" phasesForm.get('phaseSelection').value =='1'"
+        ></app-init-phase> 
+        <app-req-phase
+        *ngIf=" phasesForm.get('phaseSelection').value =='2'"
+        ></app-req-phase> 
+        <app-design-phase
+        *ngIf=" phasesForm.get('phaseSelection').value =='3'"
+        ></app-design-phase> 
+    </div>
+</div>

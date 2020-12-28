@@ -1,0 +1,27 @@
+<form [formGroup]="designForm" (ngSubmit)="onSubmit()" class="px-3 py-3">
+    <h6>
+        insert documents as images (UML diagrams,Database designs,UI design)
+    </h6>
+    <button type="button" (click)="addNewFiles()" class="btn btn-primary m-2"
+    >Add new Document</button>
+    <!---------------------------------------------------  diagram Image  -->
+             <div formArrayName="newFiles">
+                <div class="form-group " *ngFor="let newFile of newFiles.controls; let i=index">
+
+                    <input type="file" 
+                    class="form-control  my-3" 
+                    id="usecaseImage" 
+                    (change)="inputChange($event)"
+                    [formControlName]="i"
+                    accept="image/*">
+                </div>
+             </div>
+            
+     <!--------------------------------------------------- Buttons -->
+     <div class="form-group text-center">
+        <button 
+        type="submit" 
+        class="btn btn-success mx-2"
+        [disabled]="!designForm.valid">Save</button>
+    </div> 
+    </form>  

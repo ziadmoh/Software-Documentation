@@ -1,0 +1,60 @@
+
+ 
+    <form  [formGroup]="initForm" (ngSubmit)="editMode? onEditSubmit(): onCreateSubmit()" class=" py-3" >
+ 
+        <!---------------------------------------------------  project title  -->
+         
+        <div class="form-group">
+            <input type="text" 
+            class="form-control item my-3" 
+            id="pTitle" 
+            placeholder="Enter the project title"
+            formControlName="pTitle">
+        </div>
+        <div class="form-group">
+            <input type="text" 
+            class="form-control item my-3" 
+            id="pTitle" 
+            placeholder="project objictives"
+            formControlName="pObjs">
+        </div>
+        <!---------------------------------------------------  project Manager  -->
+        
+        <div class="form-group">
+            <input type="text" 
+            class="form-control item my-3" 
+            id="pTitle" 
+            placeholder="project Manager"
+            formControlName="pMngr">
+        </div>
+        <!---------------------------------------------------  Budget information  -->
+        
+        <div class="form-group">
+            <input type="text" 
+            class="form-control item my-3" 
+            id="pTitle" 
+            placeholder="Budget information"
+            formControlName="budgetInfo">
+        </div>
+        <!---------------------------------------------------  project scope statment  -->
+        
+        <div class="form-group">
+            <input type="text" 
+            class="form-control item my-3" 
+            id="pTitle" 
+            placeholder="project scope statment" 
+            formControlName="pScope">
+        </div>
+       
+        <!--------------------------------------------------- Buttons -->
+        <div class="form-group">
+            <button 
+            type="submit" 
+            class="btn btn-success login-account mx-2"
+            >Save</button>
+            <button 
+            type="reset" 
+            class="btn btn-danger login-account mx-2"
+            >reset</button>
+        </div> 
+    </form>

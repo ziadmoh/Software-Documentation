@@ -1,0 +1,35 @@
+
+<div *ngIf="!editMode && !deleted" class="p-3 m-5 text-center ">
+    <div class="text-center col-12" *ngIf="phaseType == '1' ">
+        <h1>{{pTitle}}</h1>
+        <h1>  {{pObjs}}  </h1>
+        <h1> {{pMngr}}   </h1>
+        <h1> {{budgetInfo}}   </h1>
+        <h1>  {{pScope}}  </h1>
+    <button class="btn btn-warning m-3" (click)="onEdit()" >Edit</button>
+    <button class="btn btn-danger m-3" (click)="onDelete('1')">Delete</button>
+    </div>
+<!-- --------------------------------------------------------------------------- -->
+    <div class="text-center " *ngIf="phaseType == '2' ">
+        <h1>{{intro}}</h1>
+        <h1>  {{purpose}}  </h1>
+        <img [src]="usecaseImage" class="img-fluid w-75"> 
+        <h1> {{inAudience}}   </h1>
+        <h1> {{overallDesc}}   </h1>
+        <p>  {{sysFeature}}  </p>
+        
+    <button class="btn btn-warning m-3" (click)="onEdit()">Edit</button>
+    <button class="btn btn-danger m-3" (click)="onDelete('2')">Delete</button>
+
+    </div>
+    <!-- --------------------------------------------------------------------------- -->
+    <div class="text-center" *ngIf="phaseType == '3' " >
+        <div *ngFor="let form of designInputs;let i = index" class=" pointer-event">
+            <img [src]="input.value" *ngFor="let input of form | keyvalue;let s = index"   class="img-fluid w-75">
+    </div>
+    <button class="btn btn-danger m-3" (click)="onDelete('3')">Delete</button>
+
+    </div>
+</div>
+<app-init-phase *ngIf="editMode && !deleted && phaseType == '1'"></app-init-phase>
+<app-req-phase *ngIf="editMode && !deleted && phaseType == '2'"></app-req-phase>

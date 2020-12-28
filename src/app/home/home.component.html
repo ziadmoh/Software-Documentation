@@ -1,0 +1,51 @@
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 "  >
+      <button class="btn btn-primary my-3" (click)="createSdlcComponent()">Create</button>
+      <hr>
+            <!-- ------------------------------------------------------------------------------ -->
+        <div *ngFor="let input of initInputs;let i = index"
+          class="card cardStyle my-2 " 
+          style="width: 14rem;" 
+          >
+          <button class="btn btn-info" (click)="onLoadView(i,'1')">View details</button>
+          <div class="card-body pointer-event">
+            <h5 class="card-title">{{input.pTitle}}</h5>
+            <h6 class="card-subtitle mb-2 text-muted">{{input.pMngs}}</h6>
+            <p class="card-text">{{input.budgetInfo}}</p>
+          </div>
+        </div>
+        <!-- ---------------------------------------------------- -->
+        <div *ngFor="let input of reqInputs;let r = index"
+          class="card cardStyle my-2 " 
+          style="width: 14rem;" 
+          >
+          <button class="btn btn-info" (click)="onLoadView(r,'2')">View details</button>
+          <div class="card-body pointer-event"  >
+            <h5 class="card-title">{{input.intro}}</h5>
+            <img [src]="input.usecaseImage"
+              class="card-img-top">  
+            <h6 class="card-subtitle mb-2 text-muted">{{input.inAudience}}</h6>
+            <p class="card-text">{{input.sysFeature}}</p>
+          </div>
+        </div>
+        <!-- ---------------------------------------------------- -->
+        <!-- col-xl-12 col-lg-12 col-md-12 col-sm-6 -->
+        <div *ngFor="let form of designInputs;let d = index"
+          class="card cardStyle my-2 " 
+          style="width: 14rem;" >
+          <button class="btn btn-info" (click)="onLoadView(d,'3')">View details</button> 
+          <div class="card-body pointer-event"  >
+            <img [src]="input.value" *ngFor="let input of form | keyvalue;let s = index" class="card-img-top">
+          </div>  
+      </div>
+            <!-- --------------------------------------------------------------------------- -->
+    </div>
+    <div class="col-md-8 ">
+      <ng-template  appPlaceholder [ngIf]="!sdlcViewed && phaseView" ></ng-template>
+      <app-sdlc *ngIf="sdlcViewed && !phaseView "></app-sdlc> 
+    </div>
+    
+  </div>
+</div>

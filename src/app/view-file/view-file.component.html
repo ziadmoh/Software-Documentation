@@ -1,0 +1,24 @@
+
+
+<div class="p-3">
+<!-- --------------------------------------------------------------------------- -->
+    <div class="text-center " *ngIf="phaseType == '2' ">
+        <h2 *ngFor="let fileName of reqInputsFileName">{{fileName}}</h2>
+        <h5>  phase : Requirment and Analysis  </h5>
+        <img [src]="usecaseImage" class="img-fluid w-75"> 
+    </div>
+    <!-- --------------------------------------------------------------------------- -->
+    <div class="text-center" *ngIf="phaseType == '3' " >
+        
+        
+        <div *ngFor="let files of designInputsFilesName;let i = index">
+            <h2 *ngFor="let file of files | keyvalue;let s = index"> {{ file.value }}</h2>
+        </div>
+        <h5>  phase : Design  </h5>
+        <div *ngFor="let form of designInputs;let i = index" >
+            <img [src]="input.value" *ngFor="let input of form | keyvalue;let s = index"  class="img-fluid w-75">
+            
+    </div>
+
+    </div>
+</div>    

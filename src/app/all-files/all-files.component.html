@@ -1,0 +1,31 @@
+<div class="container">
+  <div class="row">
+    <div class="col-4">
+        <div *ngFor="let input of usecaseImage;let r = index"
+             class="card cardStyle my-2 " 
+             style="width: 14rem;" 
+             >
+             <button class="btn btn-info" (click)="onLoadView(r,'2')">View details</button>
+                    <div class="card-body pointer-event"  >
+                      <img [src]="input.usecaseImage"
+                      class="card-img-top">
+                    </div>
+        </div>
+<!-- -------------------- -->
+        <div *ngFor="let form of designFiles;let d = index"
+            class="card cardStyle my-2" 
+            style="width: 14rem;" 
+            >
+            <button class="btn btn-info" (click)="onLoadView(d,'3')">View details</button> 
+            <div class="card-body pointer-event"  >
+              <img [src]="input.value" *ngFor="let input of form | keyvalue;let s = index" class="card-img-top">
+            </div>
+                   
+        </div>
+    </div>
+    <div class="col-8">
+      <ng-template appPlaceholder class="col-5"></ng-template>
+    </div>
+   
+  </div>
+</div>
